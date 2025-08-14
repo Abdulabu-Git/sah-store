@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inventory | SAH-STORE</title>
+  <meta name="description" content="SAH-STORE wholesale distributor of soft drinks and farm produce in Damaturu, Yobe State, Nigeria." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/cart.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="SAH-STORE logo" class="logo"/>
+      <span>SAH-STORE</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="inventory.html">Inventory</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html" class="cart-link">Cart <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="container">
+  <h1>Inventory</h1>
+  <p class="lead">Simple stock tracker you can update in-browser. Data saves to your device (localStorage).</p>
+  <div class="toolbar">
+    <button class="btn small" onclick="exportInventory()">Export CSV</button>
+    <button class="btn small" onclick="importInventory()">Import CSV</button>
+    <input type="file" id="csvFile" accept=".csv" style="display:none" />
+  </div>
+  <table id="inventory-table" class="table">
+    <thead>
+      <tr><th>Product</th><th>Category</th><th>Unit Price (₦)</th><th>Stock Qty</th><th>Remarks</th><th></th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button class="btn" onclick="addRow()">Add Row</button>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () { loadInventoryUI(); });
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <h4>SAH-STORE</h4>
+      <p>Refreshing Drinks, Fresh Harvests — Wholesale Made Easy.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>Damaturu, Yobe State, Nigeria</li>
+        <li>Phone: +234 XXX XXX XXXX</li>
+        <li>Email: sahstore@example.com</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Open Hours</h4>
+      <ul>
+        <li>Mon–Sat: 8:00–18:00</li>
+        <li>Sun: Closed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container tiny center">© <span id="year"></span> SAH-STORE — All rights reserved.</div>
+</footer>
+</body>
+</html>
